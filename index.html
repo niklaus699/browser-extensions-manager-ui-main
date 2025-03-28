@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+  </head>
+  <body data-theme="light">
+    <div class="entire">
+      <!-- Header -->
+      <div id="extensionHeader">
+        <img src="./assets/images/logo.svg" alt="logo" class="header-logo" />
+        <button id="themeToggle" class="theme-toggle-btn">
+          <!-- The icon can dynamically swap from moon to sun if you want -->
+          <img
+            id="themeToggleIcon"
+            src="./assets/images/icon-moon.svg"
+            alt="theme toggle icon"
+          />
+        </button>
+      </div>
+      <div class="desktop-after-header">
+        <!-- Title -->
+        <h1 class="extensions-title">Extensions List</h1>
+
+        <!-- Filter Buttons -->
+        <div class="filters">
+          <button id="allBtn" class="filter-btn active">All</button>
+          <button id="activeBtn" class="filter-btn">Active</button>
+          <button id="inactiveBtn" class="filter-btn">Inactive</button>
+        </div>
+      </div>
+
+      <!-- Tools Container -->
+      <div id="tools-container" class="tools-container"></div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
