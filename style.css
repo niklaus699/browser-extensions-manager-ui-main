@@ -3,6 +3,20 @@
   CSS Variables for light/dark themes 
   -------------------------------------------------------------
 */
+@font-face {
+  font-family: NotoSansBold;
+  src: url(./assets/fonts/static/NotoSans-Bold.ttf);
+}
+@font-face {
+  font-family: NotoSansMedium;
+  src: url(./assets/fonts/static/NotoSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: NotoSansRegular;
+  src: url(./assets/fonts/static/NotoSans-Regular.ttf);
+}
+
 :root {
   /* Light Theme Colors */
   --color-bg-light: #f8f9fb;
@@ -34,6 +48,7 @@ body[data-theme="light"] {
 }
 body[data-theme="light"] #extensionHeader {
   background-color: white;
+  border: 1px solid hsl(217, 61%, 90%);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 body[data-theme="light"] .tool-card {
@@ -95,8 +110,9 @@ body[data-theme="dark"] #extensionHeader {
   transition: fill var(--transition-speed);
 }
 .logo-text {
+  font-family: NotoSansBold;
   font-size: 1.5rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   transition: color var(--transition-speed);
 }
 
@@ -151,6 +167,7 @@ body[data-theme="dark"] #extensionHeader {
   padding: 0.5rem 1rem;
   position: relative;
   transition: background-color var(--transition-speed);
+  font-family: NotoSansMedium;
 }
 
 .filter-btn:hover,
@@ -186,6 +203,7 @@ body[data-theme="dark"] .remove-btn.active {
     -------------------------------------------------------------
   */
 .extensions-title {
+  font-family: NotoSansBold;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -227,11 +245,13 @@ body[data-theme="dark"] .remove-btn.active {
 }
 
 .tool-name {
+  font-family: NotoSansMedium;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .tool-description {
+  font-family: NotoSansRegular;
   flex-wrap: wrap;
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -251,6 +271,7 @@ body[data-theme="dark"] .remove-btn.active {
 
 /* Remove Button */
 .remove-btn {
+  font-family: NotoSansMedium;
   background-color: transparent;
   border: 1px solid hsl(0, 0%, 78%);
   border-radius: 20px;
