@@ -4,309 +4,337 @@
   -------------------------------------------------------------
 */
 :root {
-    /* Light Theme Colors */
-    --color-bg-light: #f8f9fb;
-    --color-text-light: #1f1f1f;
-    --color-card-light: #ffffff;
-    --color-border-light: #e1e1e1;
-  
-    /* Dark Theme Colors */
-    --color-bg-dark:  #091540;
-    --color-text-dark: #f8f9fb;
-    --color-card-dark: #2a2d37;
-    --color-border-dark: #3a3f4c;
-  
-    /* Shared */
-    --color-accent: #f7542e; /* or any accent color you wish */
-    --transition-speed: 0.3s;
-    --font-family: 'Arial', sans-serif; /* Adjust as needed */
-  }
-  
-  /* 
+  /* Light Theme Colors */
+  --color-bg-light: #f8f9fb;
+  --color-text-light: #1f1f1f;
+  --color-card-light: #ffffff;
+  --color-border-light: #e1e1e1;
+
+  /* Dark Theme Colors */
+  --color-bg-dark: #091540;
+  --color-text-dark: #f8f9fb;
+  --color-card-dark: #2a2d37;
+  --color-border-dark: #3a3f4c;
+
+  /* Shared */
+  --color-accent: #f7542e; /* or any accent color you wish */
+  --transition-speed: 0.3s;
+  --font-family: "Arial", sans-serif; /* Adjust as needed */
+}
+
+/* 
     -------------------------------------------------------------
     GLOBAL THEME STYLES
     We switch variables depending on [data-theme]
     -------------------------------------------------------------
   */
-  body[data-theme="light"] {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-light);
-  }
-  
-  body[data-theme="light"] .tool-card {
-    background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
-    border: 1px solid var(--color-border-light);
-  }
-  
-  body[data-theme="dark"] {
-    background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
-    color: var(--color-text-dark);
-  }
-  
-  body[data-theme="dark"] .tool-card {
-    background-color: var(--color-card-dark);
-    border: 1px solid var(--color-border-dark);
-  }
-  
-  /* 
+body[data-theme="light"] {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+body[data-theme="light"] #extensionHeader {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+body[data-theme="light"] .tool-card {
+  background-color: white;
+  border: 1px solid var(--color-border-light);
+}
+
+body[data-theme="dark"] {
+  background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
+  color: var(--color-text-dark);
+}
+
+body[data-theme="dark"] .tool-card {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+body[data-theme="dark"] #extensionHeader {
+  background-color: hsl(226, 11%, 37%);
+}
+
+
+/* body[data-theme="dark"] .logo-text {
+    color: white;
+  } */
+
+/* 
     -------------------------------------------------------------
     BASE STYLES
     -------------------------------------------------------------
   */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-family);
-  }
-  
-  .entire {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  /* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.entire {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 
     -------------------------------------------------------------
     HEADER
     -------------------------------------------------------------
   */
-  #extensionHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-  .tool-header {
-    display: flex;
-    align-items: center;     /* ADDED: vertically center them in one row */
-    justify-content: space-between; /* You can keep this if you want them at extreme ends */
-    gap: 1rem;               /* ADDED: horizontal space between image and text */
-  }
+#extensionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  border-radius: 15px;
+  padding: 1px 10px;
+}
+.logo-container svg {
+  transition: fill var(--transition-speed);
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color var(--transition-speed);
+}
 
-  .tool-info {
-    display: flex;
-    flex-direction: column;
-  }
-  .header-logo {
-    height: 40px;
-    width: auto;
-  }
-  
-  .theme-toggle-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform var(--transition-speed);
-  }
-  
-  .theme-toggle-btn:hover {
-    transform: scale(1.1);
-  }
-  .desktop-after-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  /* 
+.tool-header {
+  display: flex;
+  align-items: center; /* ADDED: vertically center them in one row */
+  justify-content: space-between; /* You can keep this if you want them at extreme ends */
+  gap: 1rem; /* ADDED: horizontal space between image and text */
+}
+
+.tool-info {
+  display: flex;
+  flex-direction: column;
+}
+.header-logo {
+  height: 40px;
+  width: auto;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-speed);
+}
+
+.theme-toggle-btn:hover {
+  background-color: hsl(0, 0%, 78%);
+  padding: 7px;
+  border-radius: 6px;
+}
+.desktop-after-header {
+  display: flex;
+  justify-content: space-between;
+}
+/* 
     -------------------------------------------------------------
     FILTER BUTTONS
     -------------------------------------------------------------
   */
-  .filters {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .filter-btn {
-    border: none;
-    background-color: transparent;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    position: relative;
-    transition: background-color var(--transition-speed);
-  }
-  
-  .filter-btn:hover,
-  .filter-btn.active {
-    background-color: var(--color-accent);
-    border-radius: 18px;
-    color: white;
-  }
-  
-  body[data-theme="dark"] .filter-btn {
-    color: white;
-  }
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 
-  /* Make it look different in dark mode on hover/active */
-  body[data-theme="dark"] .filter-btn:hover,
-  body[data-theme="dark"] .filter-btn.active {
-    background-color: hsl(3, 77%, 44%);
-    color: black;
-  }
+.filter-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: background-color var(--transition-speed);
+}
 
-  body[data-theme="dark"] .remove-btn{
-    color: white;
-  }
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--color-accent);
+  border-radius: 18px;
+  color: white;
+}
 
-  body[data-theme="dark"] .remove-btn:hover,
-  body[data-theme="dark"] .remove-btn.active{
-    color: black;
-  }
-  
-  /* 
+body[data-theme="dark"] .filter-btn {
+  color: white;
+}
+
+/* Make it look different in dark mode on hover/active */
+body[data-theme="dark"] .filter-btn:hover,
+body[data-theme="dark"] .filter-btn.active {
+  background-color: hsl(3, 77%, 44%);
+  color: black;
+}
+
+body[data-theme="dark"] .remove-btn {
+  color: white;
+}
+
+body[data-theme="dark"] .remove-btn:hover,
+body[data-theme="dark"] .remove-btn.active {
+  color: black;
+}
+
+/* 
     -------------------------------------------------------------
     EXTENSIONS TITLE
     -------------------------------------------------------------
   */
-  .extensions-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* 
+.extensions-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* 
     -------------------------------------------------------------
     TOOLS CONTAINER (Responsive Grid)
     -------------------------------------------------------------
   */
-  .tools-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 0.5rem;
-  }
-  
-  /* 
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 0.5rem;
+}
+
+/* 
     -------------------------------------------------------------
     TOOL CARD
     -------------------------------------------------------------
   */
-  .tool-card {
-    position: relative;
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    border-radius: 8px;
-    transition: box-shadow var(--transition-speed);
-  }
-  
-  .tool-card:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .tool-logo {
-    height: 50px;
-    width: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .tool-name {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .tool-description {
-    flex-wrap: wrap;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-  }
-  
-  /* 
+.tool-card {
+  position: relative;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: box-shadow var(--transition-speed);
+}
+
+.tool-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tool-logo {
+  height: 50px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.tool-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tool-description {
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* 
     -------------------------------------------------------------
     CARD ACTIONS
     -------------------------------------------------------------
   */
-  .card-actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* Remove Button */
-  .remove-btn {
-    background-color: transparent;
-    border: 1px solid hsl(0, 0%, 78%);
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    padding: 0.4rem 0.6rem;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
-  }
-  
-  .remove-btn:hover {
-    background-color: var(--color-accent);
-    color: white;
-    border: none;
-  }
-  
-  /* 
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Remove Button */
+.remove-btn {
+  background-color: transparent;
+  border: 1px solid hsl(0, 0%, 78%);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+}
+
+.remove-btn:hover {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+}
+
+/* 
     -------------------------------------------------------------
     ACTIVE TOGGLE SWITCH
     -------------------------------------------------------------
     Basic custom switch using a checkbox
   */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 42px;
-    height: 22px;
-  }
-  
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  input:checked + .slider {
-    background-color: var(--color-accent);
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(20px);
-  }
-  
-  /* 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--color-accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* 
     -------------------------------------------------------------
     MEDIA QUERIES (Adjust as needed)
     -------------------------------------------------------------
   */
-  @media (max-width: 600px) {
-    .filters {
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      flex: 1 1 auto;
-      text-align: center;
-    }
-    .tools-container {
-      grid-template-columns: 1fr;
-    }
-    .desktop-after-header {
-      flex-direction: column;
-    }
+@media (max-width: 600px) {
+  .filters {
+    flex-wrap: wrap;
   }
-  
+  .filter-btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .tools-container {
+    grid-template-columns: 1fr;
+  }
+  .desktop-after-header {
+    flex-direction: column;
+  }
+}
